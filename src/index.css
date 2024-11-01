@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: Outfit ;
+}
+.active {
+    position: relative;
+    text-decoration: none; /* Remove default underline */
+    /* Add a custom underline */
+    background-image: linear-gradient(blue,red);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 2px;    
+    /* Transition for smooth animation */
+    transition: background-size 0.3s ease;
+    background-size: 50% 2px; /* Expand underline to 50% width on hover */
+  }
+
+.not-active{
+    opacity: 0.5;
+}
+
+.menu{
+  @apply border pl-6 py-2 sm:bg-none bg-black sm:text-black text-white
+}
+.not-menu{
+  @apply border pl-6 py-2 
+}
+::-webkit-scrollbar{
+  @apply hidden
+}
+
+
+/* i want to remove the color imag eto white mwant to mask the image inside */
+.first{
+  background-image: url('image.jpg');
+  mix-blend-mode: multiply;
+}
+.second{
+  background-image: url('image.jpg');
+  mix-blend-mode: multiply;
+  
+}
+
