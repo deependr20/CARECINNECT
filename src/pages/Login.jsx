@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const Login = () => {
   const [account, setAccount] = useState(true)
+  const navigate = useNavigate()  
  const [form, setform] = useState({name: "",email: "", password: ""})
 
   const handleChange = (e) => {
     setform({...form , [e.target.name]: e.target.value})
-      
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(form)
+    toast.success("Account created successsfully")
+    setAccount(false)
     setform({name:"" , email:"", password: ""})
   }
 
@@ -35,7 +39,7 @@ const Login = () => {
                       <p className='text-gray-500 mb-1'>Password</p>
                       <input name='password' value={form.password} onChange={handleChange} className='border w-full p-2 rounded-md '  type='Password' />
                  </div>
-                 <button  className='w-full bg-[#5F6FFF] mt-5 py-3  text-sm text-white rounded-md'>{account ? "Create Account" : "Login"}</button>
+                 <button onClick={()=>{account === false && navigate("/")} }  className='w-full bg-[#5F6FFF] mt-5 py-3  text-sm text-white rounded-md'>{account ? "Create Account" : "Login"}</button>
                  <div className='flex gap-2 mt-3 text-sm items-center'>
                       <p className='text-gray-500' >{account ?  "Already have an account? " : "Create an new account?"}</p>
                       <a className='underline text-blue-500 cursor-pointer' onClick={()=> setAccount(prev => !prev)} >{account ? "Login here" : "Click here"}</a>

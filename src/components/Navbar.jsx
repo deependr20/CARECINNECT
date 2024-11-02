@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className='flex justify-between items-center py-4 border-b border-zinc-400'>
           <div className='flex items-center'>
-                <img  onClick={()=> navigate("/")}  className='cursor-pointer object-cover w-16 h-10  ' src={assets.logo5} alt="" />
+                <img  onClick={()=> navigate("/")}  className='cursor-pointer object-cover w-16 h-13  ' src={assets.logo5} alt="" />
                 <img  onClick={()=> navigate("/")}  className='cursor-pointer object-cover w-32 ' src={assets.logo6} alt="" />
           </div>
           <div className='md:flex gap-6 hidden font-semibold items-center'>
